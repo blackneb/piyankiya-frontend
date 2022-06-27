@@ -20,12 +20,11 @@ function App() {
         <Route path='/men' element={<Men/>}/>
         <Route path='/women' element={<Women/>}/>
         <Route path='/kids' element={<Kids/>}/>
-        <Route path='/occassion' element={<Occasion/>}/>
+        <Route path='/occasion' element={<Occasion/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
       </Routes>
     </BrowserRouter>
-    <Footer/>
     </div>
   );
 }
