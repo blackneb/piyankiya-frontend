@@ -10,7 +10,7 @@
     height: 75px;
     background-color: white;
     border: 1px white solid;
-    box-shadow: 0 4px 8px 0 rgba(119,231,109,0.2), 0 6px 20px 0 rgba(119,231,0.9,0.19);
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
 }
 
 .logo{
@@ -36,19 +36,7 @@
 .links:hover{
     font-size: 100%;
 }
-.links-signup{
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    padding: 5px 10px;
-    margin: 0 5px;
-    cursor: pointer;
-    border: 1px rgb(119, 231, 109) solid;
-    border-radius: 10px;
-}
-.links-signup:hover{
-    font-size: 100%;
-}
+
 .mobile-menu-icon{
     display: none;
 }
@@ -87,15 +75,6 @@
         padding: 32px;
         width: 100%;
         transition: all 0.5s ease;
-    }
-    .links-signup{
-        color: black;
-        text-align: center;
-        padding: 32px;
-        width: 100%;
-        transition: all 0.5s ease;
-        border: none;
-    
     }
     .mobile-menu-icon{
         display: block;

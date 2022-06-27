@@ -9,28 +9,28 @@ const Navbar = () => {
   const[isMobile,setIsMobile]=useState(false);
   return (
       <nav className='navbar'>
-          <h3 className='logo'>Logo</h3>
+          <h3 className='logo'>PIYANKIYA</h3>
           <ul className={isMobile? "nav-links-mobile" : "nav-li"} onClick={()=>setIsMobile(false)}>
             
                 <Link  to="/" className='links'>
                   <li>Home</li>
                 </Link>
-                <Link  to="/events" className='links'>
+                <Link  to="/men" className='links'>
                   <li>Men</li>
                 </Link>
-                <Link  to="/tour" className='links'>
+                <Link  to="/women" className='links'>
                   <li>Women</li>
                 </Link>
-                <Link  to="/trending" className='links'>
+                <Link  to="/kids" className='links'>
                   <li>Kids</li>
                 </Link>
-                <Link  to="/howto" className='links'>
+                <Link  to="/occasion" className='links'>
                   <li>Occasion</li>
                 </Link>
                 <Link  to="/contact" className='links'>
                   <li>Contact</li>
                 </Link>
-                <Link  to="/signup" className='links-signup'>
+                <Link  to="/about" className='links'>
                   <li>About</li>
                 </Link>
 
