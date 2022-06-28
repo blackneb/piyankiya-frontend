@@ -1,0 +1,44 @@
+.homewo{
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.homewoboxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+.clotheboxmain{
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+    margin: 20px;
+    height: 400px;
+    width: 250px;
+}
+.details{
+    text-align: center;
+    vertical-align: bottom;
+    opacity: 0;
+}
+
+.clotheboxmain:hover{
+    size: 100%;
+    border: 5px solid black;
+}
+.clotheboxmain:hover details{
+    opacity: 1;
+}
