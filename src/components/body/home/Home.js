@@ -1,11 +1,13 @@
 import React from 'react'
 import '../../styles/style.css'
 import ClotheBox from '../../cards/ClotheBox'
+import Break from '../break/Break'
 
 
 const Home = () => {
   return (
     <div>
+      <Break/>
       <div className='homewo'>
         <div className='homewoname'>
         <h1>For Women</h1>
@@ -17,7 +19,7 @@ const Home = () => {
           <ClotheBox/>
         </div>
       </div>
-
+      <Break/>
       <div className='homewo'>
         <div className='homewoboxes'>
           <ClotheBox/>
@@ -29,7 +31,7 @@ const Home = () => {
         <h1>For Men</h1>
         </div>
       </div>
-
+      <Break/>
       <div className='homewo'>
       <div className='homewonname'>
         <h1>For Occasions</h1>
@@ -41,7 +43,7 @@ const Home = () => {
           <ClotheBox/>
         </div>
       </div>
-
+      <Break/>
       <div className='homewo'>
         <div className='homewoboxes'>
           <ClotheBox/>

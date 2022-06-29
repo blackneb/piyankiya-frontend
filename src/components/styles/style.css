@@ -54,3 +54,60 @@
 .container:hover .details{
     visibility: visible;
 }
+
+
+
+.mainbreak{
+    margin-top: 75px;
+    margin-bottom: 75px;
+    display: flex;
+    flex-direction: row;
+}
+
+@keyframes fading {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+@keyframes leng {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 40%;
+    }
+    
+}
+
+.firstmain{
+    border: 1px rgb(31, 28, 42) solid;
+    background-color: rgb(31, 28, 42);
+    width: 40%;
+    height: 3px;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-left: 10%;
+    animation: leng 2s ease-out;
+}
+.secondmain{
+    border: 2px red solid;
+    background-color: red;
+    width: 20%;
+    height: 12px;
+    border-radius: 15px;
+    animation: fading 3s ease-in-out;
+}
+.thirdmain{
+    border: 2px rgb(31, 28, 42) solid;
+    background-color: rgb(31, 28, 42);
+    width: 40%;
+    height: 3px;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-right: 10%;
+    animation: leng 2s ease-out;
+}
