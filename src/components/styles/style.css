@@ -209,6 +209,44 @@
 
 
 
+.aboutsplit{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.about_inner{
+    border: 0px solid black;
+    width: 700px;
+    height: 600px;
+    margin: 20px;
+}
+.aboutimage{
+    border: 0px solid black;
+    margin: 20px;
+    margin-top: 75px;
+    height: 500px;
+    box-shadow: 2px 2px 10px black;
+}
+
+.aboutname{
+    width: 140px;
+    border-bottom: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aboutpic{
+    height: 500px;
+}
+.aboutaddmain{
+    padding: 20px;
+}
+.aboutadd{
+    padding: 5px;
+}
+
+
+
 
 
 
