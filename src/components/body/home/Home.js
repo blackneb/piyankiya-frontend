@@ -3,6 +3,7 @@ import '../../styles/style.css'
 import ClotheBox from '../../cards/ClotheBox'
 import Break from '../break/Break'
 import Contact from '../contact/Contact'
+import About from '../about/About'
 
 
 const Home = () => {
@@ -58,6 +59,8 @@ const Home = () => {
       </div>
       <Break/>
       <Contact/>
+      <Break/>
+      <About/>
       <Break/>
     </div>
   )

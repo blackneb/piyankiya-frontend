@@ -17,9 +17,9 @@ const About = () => {
             in many forms nowadays. It is made of cotton fabric, and typically comes in white, grey or beige 
             shades. Many women also wrap a shawl called a netela around the formal dress. </p>
             <div className='aboutaddmain'>
-              <h5 className='aboutadd'>Address: </h5>
-              <h5 className='aboutadd'>Phone: </h5>
-              <h5 className='aboutadd'>E-mail: </h5>
+              <h5 className='aboutadd'>Address: Addis Ababa, Ethiopia </h5>
+              <h5 className='aboutadd'>Phone: +251913993381 </h5>
+              <h5 className='aboutadd'>E-mail: Tsedeymkt@gmail.com </h5>
             </div>
         </div>
         </div>
