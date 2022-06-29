@@ -44,7 +44,7 @@
     color: white;
 }
 .container:hover{
-    border: 3px solid black;
+    border: 0px solid black;
 }
 
 .container:hover .pic{
