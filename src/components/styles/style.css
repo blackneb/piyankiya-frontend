@@ -39,12 +39,30 @@
     margin-right: auto;
     margin-top: 5px;
 }
+.linkdetails{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.detailsbut{
+    text-decoration: none;
+}
+.linkdetails:hover{
+    color: white;
+}
 .but:hover{
     background-color: black;
     color: white;
 }
 .container:hover{
     border: 0px solid black;
+}
+
+.container:hover .linkdetails{
+    text-decoration: none;
 }
 
 .container:hover .pic{

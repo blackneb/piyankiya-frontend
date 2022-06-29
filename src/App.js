@@ -9,6 +9,7 @@ import Kids from './components/body/kids/Kids';
 import Men from './components/body/men/Men';
 import Occasion from './components/body/occasion/Occasion';
 import Women from './components/body/women/Women';
+import Detailed from './components/body/detailed/Detailed';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/occasion' element={<Occasion/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/detailed' element={<Detailed/>}/>
       </Routes>
     </BrowserRouter>
     <Footer/>
