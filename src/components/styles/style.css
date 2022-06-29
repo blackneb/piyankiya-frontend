@@ -14,31 +14,43 @@
     flex-wrap: wrap;
 }
 
-
-
-
-
-
-
-
-.clotheboxmain{
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px black;
-    margin: 20px;
+.pic{
     height: 400px;
-    width: 250px;
-}
-.details{
-    text-align: center;
-    vertical-align: bottom;
-    opacity: 0;
+    padding: 20px;
+    border-radius: 25px;
 }
 
-.clotheboxmain:hover{
-    size: 100%;
-    border: 3px solid black;
+.details{
+    visibility: hidden;
 }
-.clotheboxmain:hover details{
-    opacity: 1;
+
+.container{
+    height: 470px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px black;
+}
+.but{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+.but:hover{
+    background-color: black;
+    color: white;
+}
+.container:hover{
+    border: 2px solid black;
+}
+
+.container:hover .pic{
+    transform: translate(0px, -15px)
+}
+
+.container:hover .details{
+    visibility: visible;
 }
