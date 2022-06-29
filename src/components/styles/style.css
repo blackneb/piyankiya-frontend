@@ -37,7 +37,7 @@
 
 .clotheboxmain:hover{
     size: 100%;
-    border: 5px solid black;
+    border: 3px solid black;
 }
 .clotheboxmain:hover details{
     opacity: 1;
