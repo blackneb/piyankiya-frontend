@@ -2,6 +2,7 @@ import React from 'react'
 import '../../styles/style.css'
 import ClotheBox from '../../cards/ClotheBox'
 import Break from '../break/Break'
+import Contact from '../contact/Contact'
 
 
 const Home = () => {
@@ -55,7 +56,9 @@ const Home = () => {
         <h1>For Kids</h1>
         </div>
       </div>
-
+      <Break/>
+      <Contact/>
+      <Break/>
     </div>
   )
 }

@@ -44,7 +44,7 @@
     color: white;
 }
 .container:hover{
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 .container:hover .pic{
@@ -111,3 +111,104 @@
     margin-right: 10%;
     animation: leng 2s ease-out;
 }
+
+
+.main_contact{
+    height: 500px;
+}
+
+.top-con{
+    text-align: center;
+    margin-top: 50px;
+}
+.top-main-contact{
+    margin-bottom: 20px;
+}
+.left-box{
+    border: 2px rgb(31, 28, 42) solid ;
+    border-left: 15px rgb(11, 0, 53) solid;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color:rgb(31, 28, 42);
+    color: white;
+    
+}
+.address{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.ppcontent{
+    text-align: center;
+    justify-content: center;
+    font-size: 15px;
+}
+.contactmail{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    width: 500px;
+    border: 2px rgb(31, 28, 42) solid ;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 5px;
+    background-color: white;
+    color:rgb(31, 28, 42);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+}
+.submail{
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(31, 28, 42);
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.conui{
+   justify-content: center;
+}
+.conli{
+    list-style: none;
+    padding: 8px;
+}
+.conlabel{
+    padding: 10px;
+
+}
+.coninput{
+    border: none;
+    border-bottom: 2px rgb(11, 0, 53) solid;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width:780px){
+    .contactmail{
+        margin-left: 50px;
+        padding: 15px;
+        height: 350px;
+        width: 300px;
+        border: 2px rgb(31, 28, 42) solid ;
+        border-radius: 100px;
+        padding: 20px;
+        margin-top: 5px;
+        background-color: white;
+        color:rgb(31, 28, 42);
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+    }
+    .coninput{
+        border: none;
+        border-bottom: 2px rgb(11, 0, 53) solid;
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+
+
