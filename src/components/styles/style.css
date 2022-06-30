@@ -267,5 +267,28 @@
 
 
 
+.detailedpic{
+    height: 500px;
+}
+.detailedmain{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.detailedfirst{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
-
+}
+.detailedsecond{
+    margin: 50px;
+    margin-right: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.detailedthird{
+    margin: 50px;
+}
