@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import './navbar.css';
+import '../styles/style.css';
 import {Link} from 'react-router-dom';
 import menu from './menu.png';
 import close from "./close.png";

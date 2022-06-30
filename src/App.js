@@ -26,8 +26,8 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/detailed' element={<Detailed/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
-    <Footer/>
     </div>
   );
 }

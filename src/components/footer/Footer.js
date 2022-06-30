@@ -1,5 +1,6 @@
 import React from 'react';
-import './Footer.css';
+import '../styles/style.css';
+import {Link} from 'react-router-dom';
 import Facebook from '../icons/facebook.png';
 import Instagram from '../icons/instagram.png';
 import Telegram from '../icons/telegram.png';
@@ -24,13 +25,27 @@ const Footer = () => {
         <div className='footer-two'>
           <h4>Quick Links</h4>
           <ul>
-            <li>Home</li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>Kids</li>
-            <li>Occasions</li>
-            <li>Contact</li>
-            <li>About</li>
+            <Link  to="/" className='linkstwo'>
+              <li>Home</li>
+            </Link>
+            <Link  to="/men" className='linkstwo'>
+              <li>Men</li>
+            </Link>
+            <Link  to="/women" className='linkstwo'>
+              <li>Women</li>
+            </Link>
+            <Link  to="/kids" className='linkstwo'>
+              <li>Kids</li>
+            </Link>
+            <Link  to="/occasion" className='linkstwo'>
+              <li>Occasion</li>
+            </Link>
+            <Link  to="/contact" className='linkstwo'>
+              <li>Contact</li>
+            </Link>
+            <Link  to="/about" className='linkstwo'>
+              <li>About</li>
+            </Link>
           </ul>
         </div>
         <div className='footer-two'>
