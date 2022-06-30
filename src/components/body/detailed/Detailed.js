@@ -7,7 +7,7 @@ const Detailed = () => {
     <div>
         <div className='detailedmain'>
           <div className='detailedfirst'>
-            <img src={Photo} className='detailedpic'/>
+            <img src={Photo} alt='' className='detailedpic'/>
           </div>
 
           <div className='detailedsecond'>
