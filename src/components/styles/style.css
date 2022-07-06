@@ -236,10 +236,6 @@
 }
 
 
-.main_contact{
-    height: 500px;
-}
-
 .top-con{
     text-align: center;
     margin-top: 50px;
@@ -281,10 +277,13 @@
     background-color: white;
     color:rgb(31, 28, 42);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .submail{
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
     background-color: rgb(31, 28, 42);
     color: white;
     font-size: 15px;
@@ -297,16 +296,46 @@
     list-style: none;
     padding: 8px;
 }
-.conlabel{
-    padding: 10px;
 
+
+.formInput{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    align-items: center;
+    justify-content: center;
 }
-.coninput{
+
+input{
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
     border: none;
     border-bottom: 2px rgb(11, 0, 53) solid;
-    font-size: 20px;
-    margin-bottom: 15px;
 }
+
+
+label{
+    font-size: 14px;
+    color: black;
+}
+
+span{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span{
+    display: block;
+}
+
+
 
 @media screen and (max-width:780px){
     .contactmail{
@@ -374,6 +403,7 @@
 
 .detailedpic{
     height: 500px;
+    border-radius: 15px;
 }
 .detailedmain{
     margin-top: 50px;
@@ -385,6 +415,7 @@
 }
 .detailedfirst{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
 
 }
 .detailedsecond{
@@ -396,6 +427,9 @@
 }
 .detailedthird{
     margin: 50px;
+    padding: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
 }
 
 
