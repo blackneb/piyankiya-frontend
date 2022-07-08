@@ -9,11 +9,32 @@ import About from '../about/About'
 
 const Home = () => {
   const baseURL = "http://localhost/piyankiya/api/post/read.php";
+  const baseURLMEN = "http://localhost/piyankiya/api/post/read_byg.php?gender=male";
+  const baseURLWOMEN = "http://localhost/piyankiya/api/post/read_byg.php?gender=female";
+  const baseURLKIDS = "http://localhost/piyankiya/api/post/read_bya.php?age=kids";
+  const baseURLOCCASIONS = "http://localhost/piyankiya/api/post/read_byt.php?types=occasion";
   const [post, setPost] = React.useState(null);
+  const [men,setmen]= React.useState(null);
+  const [women,setwomen]= React.useState(null);
+  const [kids,setkids]= React.useState(null);
+  const [occasion,setoccasions]= React.useState(null);
+
 
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setPost(response.data);
+    });
+    axios.get(baseURLMEN).then((response) => {
+      setmen(response.data);
+    });
+    axios.get(baseURLWOMEN).then((response) => {
+      setwomen(response.data);
+    });
+    axios.get(baseURLKIDS).then((response) => {
+      setkids(response.data);
+    });
+    axios.get(baseURLOCCASIONS).then((response) => {
+      setoccasions(response.data);
     });
   }, []);
 
@@ -26,7 +47,7 @@ const Home = () => {
         <h1>For Women</h1>
         </div>
         <div className='homewoboxes'>
-          {post.data.map((e) => (
+          {women.data.map((e) => (
             <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photo}/>
           ))}
         </div>
@@ -34,9 +55,9 @@ const Home = () => {
       <Break/>
       <div className='homewo'>
       <div className='homewoboxes'>
-          {post.data.map((e) => (
-            <ClotheBox name={e.name}/>
-          ))}
+        {men.data.map((e) => (
+              <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photo}/>
+            ))}
         </div>
         <div className='homewonname'>
         <h1>For Men</h1>
@@ -48,17 +69,17 @@ const Home = () => {
         <h1>For Occasions</h1>
         </div>
         <div className='homewoboxes'>
-          {post.data.map((e) => (
-            <ClotheBox name={e.name}/>
-          ))}
+          {occasion.data.map((e) => (
+              <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photo}/>
+            ))}
         </div>
       </div>
       <Break/>
       <div className='homewo'>
       <div className='homewoboxes'>
-          {post.data.map((e) => (
-            <ClotheBox name={e.name}/>
-          ))}
+        {kids.data.map((e) => (
+              <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photo}/>
+            ))}
         </div>
         <div className='homewonname'>
         <h1>For Kids</h1>
