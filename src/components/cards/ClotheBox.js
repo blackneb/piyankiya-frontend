@@ -8,6 +8,7 @@ const ClotheBox = (props) => {
   const [price,setprice] = useState(props.price);
   const [description,setdescription] = useState(props.description);
   const [photos,setphotos] = useState(props.photo);
+  const [id,setid] = useState(props.id);
   return (
     <div className='mainbox'>
       <div className='container'>
@@ -17,7 +18,7 @@ const ClotheBox = (props) => {
         <div className='intro'>
           <h5 className='details'>{props.name}</h5>
           <div className='but'>
-            <Link  to="/detailed"  state={{fname:name,fphoto:photos,fprice:price,fdescription:description }} className='detailsbut'>
+            <Link  to="/detailed"  state={{fname:name,fphoto:photos,fprice:price,fdescription:description, fid:id }} className='detailsbut'>
               <li className='linkdetails'><h5 className='detailsbut'>View</h5></li>
             </Link>
           </div>

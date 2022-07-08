@@ -3,21 +3,24 @@ import Photo from '../../Images/imageone.jpg'
 import '../../styles/style.css'
 import FormInput from '../../Forms/FormInput'
 import { useLocation } from 'react-router-dom'
+import axios from "axios";
 
 const Detailed = () => {
+  const baseURL="http://localhost/piyankiya/api/post/createbooking.php"
+  const [post, setPost] = React.useState(null);
   const location = useLocation();
   const { fname } = location.state
   const { fphoto } = location.state
   const { fdescription } = location.state
   const { fprice } = location.state
+  const { fid } = location.state
   const [values, setValues] = useState({
     name: "",
     phone: "",
     email: "",
     quantity: "",
+    id:fid,
   });
-
-
   const inputs = [
     {
       id: 1,
@@ -60,12 +63,20 @@ const Detailed = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(JSON.stringify(values, null,2))
   };
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  const Book = (e) => {
+      axios.post(baseURL,{cid:values.id,
+      email:values.email,
+      name:values.name,
+      phone:values.phone
+    }).then(res => {setPost(res.data);})
+    alert("true")
+  }
 
 
 
@@ -92,7 +103,7 @@ const Detailed = () => {
             onChange={onChange}
           />
         ))}
-        <input className='submail' type="submit" value="Book"></input>
+        <input className='submail' type="submit" value="Book" onClick={Book}></input>
       </form>
           </div>
 
