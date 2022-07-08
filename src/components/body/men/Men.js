@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Break from '../break/Break'
 import ClotheBox from '../../cards/ClotheBox'
 import '../../styles/style.css'
@@ -7,9 +7,8 @@ import axios from "axios";
 const Men = () => {
   const baseURL = "http://localhost/piyankiya/api/post/read.php";
   const [post, setPost] = React.useState(null);
-
   React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
+    axios.post(baseURL).then((response) => {
       setPost(response.data);
     });
   }, []);

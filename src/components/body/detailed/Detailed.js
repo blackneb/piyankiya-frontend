@@ -75,8 +75,11 @@ const Detailed = () => {
       email:values.email,
       name:values.name,
       phone:values.phone
-    }).then(res => {setPost(res.data);})
-    alert("true")
+    }).then((response) => {
+      setPost(response.message);
+    });
+    alert("Booked")
+    
   }
 
 
