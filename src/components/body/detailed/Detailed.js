@@ -70,7 +70,8 @@ const Detailed = () => {
   };
 
   const Book = (e) => {
-      axios.post(baseURL,{cid:values.id,
+      axios.post(baseURL,{
+      cid:values.id,
       email:values.email,
       name:values.name,
       phone:values.phone
