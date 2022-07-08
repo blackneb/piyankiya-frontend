@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom';
 import '../styles/style.css'
 import photo from '../Images/imagetwo.jpg'
 
 const ClotheBox = (props) => {
+  const [name,setname] = useState(props.name);
+  const [price,setprice] = useState(props.price);
+  const [description,setdescription] = useState(props.description);
+  const [photos,setphotos] = useState(props.photo);
   return (
     <div className='mainbox'>
       <div className='container'>
@@ -13,7 +17,7 @@ const ClotheBox = (props) => {
         <div className='intro'>
           <h5 className='details'>{props.name}</h5>
           <div className='but'>
-            <Link  to="/detailed" className='detailsbut'>
+            <Link  to="/detailed"  state={{fname:name,fphoto:photos,fprice:price,fdescription:description }} className='detailsbut'>
               <li className='linkdetails'><h5 className='detailsbut'>View</h5></li>
             </Link>
           </div>

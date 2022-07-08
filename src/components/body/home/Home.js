@@ -27,7 +27,7 @@ const Home = () => {
         </div>
         <div className='homewoboxes'>
           {post.data.map((e) => (
-            <ClotheBox name={e.name}/>
+            <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photo}/>
           ))}
         </div>
       </div>

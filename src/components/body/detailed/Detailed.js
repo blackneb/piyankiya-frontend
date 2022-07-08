@@ -2,8 +2,14 @@ import React, {useState} from 'react'
 import Photo from '../../Images/imageone.jpg'
 import '../../styles/style.css'
 import FormInput from '../../Forms/FormInput'
+import { useLocation } from 'react-router-dom'
 
 const Detailed = () => {
+  const location = useLocation();
+  const { fname } = location.state
+  const { fphoto } = location.state
+  const { fdescription } = location.state
+  const { fprice } = location.state
   const [values, setValues] = useState({
     name: "",
     phone: "",
@@ -70,13 +76,11 @@ const Detailed = () => {
           <div className='detailedfirst'>
             <img src={Photo} alt='' className='detailedpic'/>
           </div>
-
           <div className='detailedsecond'>
             <h2 className='conlabel'>Detailed View</h2>
-            <h3 className='conlabel'>Name: </h3>
-            <h3 className='conlabel'>Price: </h3>
-            <h3 className='conlabel'>Description: </h3>
-            <h3 className='conlabel'>Type: </h3>
+            <h3 className='conlabel'>Name: {fname} </h3>
+            <h3 className='conlabel'>Price: {fprice} </h3>
+            <h3 className='conlabel'>Description: {fdescription} </h3>
           </div>
           <div className='detailedthird'>
           <form onSubmit={handleSubmit}>
