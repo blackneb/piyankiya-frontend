@@ -92,10 +92,33 @@ const Detailed = () => {
             <img src={Photo} alt='' className='detailedpic'/>
           </div>
           <div className='detailedsecond'>
-            <h2 className='conlabel'>Detailed View</h2>
-            <h3 className='conlabel'>Name: {fname} </h3>
-            <h3 className='conlabel'>Price: {fprice} </h3>
-            <h3 className='conlabel'>Description: {fdescription} </h3>
+          <h2 className='conlabel'>Detailed View</h2>
+            <table>
+              <tr>
+                <td>
+                  Name:
+                </td>
+                <td>
+                  {fname}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Price:
+                </td>
+                <td>
+                  {fprice}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Description: 
+                </td>
+                <td>
+                  {fdescription}
+                </td>
+              </tr>
+            </table>
           </div>
           <div className='detailedthird'>
           <form onSubmit={handleSubmit}>
