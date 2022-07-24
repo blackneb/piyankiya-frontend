@@ -46,6 +46,19 @@
 }
 
 @media screen and (max-width:780px) {
+    .pic{
+        height: 400px;
+        max-width: 350px;
+        padding: 20px;
+        border-radius: 25px;
+    }
+    .container{
+        height: 470px;
+        border: 0px solid black;
+        border-radius: 15px;
+        margin: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
     .log0{
         display: flex;
         position: absolute;
@@ -296,6 +309,15 @@
     list-style: none;
     padding: 8px;
 }
+.detailedtable{
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
 
 
 .formInput{
@@ -355,17 +377,20 @@ input:invalid[focused="true"] ~ span{
 
 @media screen and (max-width:780px){
     .contactmail{
-        margin-left: 50px;
+        margin-left: auto;
+        margin-right: auto;
         padding: 15px;
-        height: 350px;
-        width: 300px;
-        border: 2px rgb(31, 28, 42) solid ;
-        border-radius: 100px;
+        width: 350px;
+        border: 0px rgb(31, 28, 42) solid ;
+        border-radius: 25px;
         padding: 20px;
         margin-top: 5px;
         background-color: white;
         color:rgb(31, 28, 42);
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .coninput{
         border: none;
@@ -436,9 +461,11 @@ input:invalid[focused="true"] ~ span{
 }
 .detailedsecond{
     margin: 50px;
-    margin-right: 150px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
+    max-width: 250px;
     flex-wrap: wrap;
 }
 .detailedthird{

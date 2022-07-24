@@ -16,6 +16,8 @@ const Detailed = () => {
   const [open, setOpen] = React.useState(false);
   const [loading, setloading] = useState(false);
   const location = useLocation();
+  const [ud,setud] = useState("");
+  const [serv,setserv] = useState("");
   const { fname } = location.state
   const { fphoto } = location.state
   const { fdescription } = location.state
@@ -105,6 +107,13 @@ const Detailed = () => {
     }).then((response) => {
       setPost(response.message);
       if(response.data.message === "post created"){
+        setud("Item Booked");
+        setserv("success");
+        handleClick();
+      }
+      else{
+        setud("Item not booked Try again");
+        setserv("error");
         handleClick();
       }
       handleloadingclose();
@@ -131,7 +140,7 @@ const Detailed = () => {
           </div>
           <div className='detailedsecond'>
           <h2 className='conlabel'>Detailed View</h2>
-            <table>
+            <table className='detailedtable'>
               <tr>
                 <td>
                   Name:
@@ -146,6 +155,30 @@ const Detailed = () => {
                 </td>
                 <td>
                   {fprice}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Gender:  
+                </td>
+                <td>
+                  For {fgender}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Age: 
+                </td>
+                <td>
+                  For {fage}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Type:
+                </td>
+                <td>
+                  {ftypes}
                 </td>
               </tr>
               <tr>
