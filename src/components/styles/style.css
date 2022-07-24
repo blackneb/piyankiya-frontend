@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Mono:ital,wght@1,600&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 .navbar{
     display: flex;
@@ -43,6 +45,17 @@
 
 .tabs{
     font-size: 20px;
+}
+
+.map-container{
+    width: 100%;
+    height: 50vh;
+}
+.mapaddress{
+    margin: 20px;
+    margin-top: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
 }
 
 @media screen and (max-width:780px) {
@@ -411,11 +424,11 @@ input:invalid[focused="true"] ~ span{
 .about_inner{
     border: 0px solid black;
     width: 700px;
-    height: 600px;
     margin: 20px;
 }
 .aboutimage{
     border: 0px solid black;
+    border-radius: 15px;
     margin: 20px;
     margin-top: 75px;
     height: 500px;
@@ -430,10 +443,10 @@ input:invalid[focused="true"] ~ span{
 }
 .aboutpic{
     height: 500px;
+    border-radius: 15px;
 }
 .aboutaddmain{
     padding: 20px;
-    margin-top: 100px;
 }
 .aboutadd{
     padding: 5px;
