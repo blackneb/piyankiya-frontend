@@ -4,10 +4,17 @@ import '../../styles/style.css'
 import FormInput from '../../Forms/FormInput'
 import { useLocation } from 'react-router-dom'
 import axios from "axios";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import Loading from '../../icons/loading.gif';
 
 const Detailed = () => {
   const baseURL="http://blackneb.com/piyankiya/api/post/createbooking.php"
   const [post, setPost] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+  const [loading, setloading] = useState(false);
   const location = useLocation();
   const { fname } = location.state
   const { fphoto } = location.state
@@ -17,6 +24,28 @@ const Detailed = () => {
   const { fage } =location.state
   const { fgender } =location.state
   const { ftypes } = location.state
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+  const handleloading = (e) => {
+    setloading(true);
+  }
+  const handleloadingclose = (e) => {
+    setloading(false);
+  }
   
   const [values, setValues] = useState({
     name: "",
@@ -33,13 +62,13 @@ const Detailed = () => {
       placeholder: "Name",
       errorMessage: "name should be 3-16 characters and shouldn't include any special character!",
       label: "Name",
-      pattern: "^[A-Za-z0-9]{3,16}$",
+      pattern: "^[A-Za-z0-9 ]{3,16}$",
       required: true,
     },
     {
       id: 2,
       name: "phone",
-      type: "text",
+      type: "tel",
       placeholder: "Phone Number",
       errorMessage: "Please enter the field",
       label: "phone",
@@ -67,13 +96,7 @@ const Detailed = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
-
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
-
-  const Book = (e) => {
+    handleloading();
       axios.post(baseURL,{
       cid:values.id,
       email:values.email,
@@ -81,8 +104,19 @@ const Detailed = () => {
       phone:values.phone
     }).then((response) => {
       setPost(response.message);
+      if(response.data.message === "post created"){
+        handleClick();
+      }
+      handleloadingclose();
     });
-    alert("Booked")
+  };
+
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const Book = (e) => {
+      
     
   }
 
@@ -134,10 +168,19 @@ const Detailed = () => {
             onChange={onChange}
           />
         ))}
-        <input className='submail' type="submit" value="Book" onClick={Book}></input>
+        <div className='withloading'>
+            <img className={loading? 'loadingimage' : 'loadingimageclose'} src={Loading}/>
+            <input className='submail' type="submit" value="Book"></input>
+        </div>        
       </form>
           </div>
-
+          <Stack spacing={2} sx={{ width: '100%' }}>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+              <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                    Item Booked
+              </Alert>
+            </Snackbar>
+          </Stack>
 
         </div>
     </div>

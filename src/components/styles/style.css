@@ -307,11 +307,27 @@
 }
 
 input{
-    padding: 15px;
+    padding: 10px;
     margin: 10px 0px;
     border-radius: 5px;
     border: none;
-    border-bottom: 2px rgb(11, 0, 53) solid;
+    width: 250px;
+    border: 1px rgb(11, 0, 53) solid;
+}
+
+.withloading{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.loadingimage{
+    height: 50px;
+}
+.loadingimageclose{
+    display: none;
 }
 
 
