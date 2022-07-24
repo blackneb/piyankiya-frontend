@@ -15,11 +15,9 @@ const Footer = () => {
         <div className='footer-one'>
           <h4>About Us</h4>
           <ul>
-            <li>E-Mail: company@gmail.com</li>
-            <li>Phone number: +251913124578</li>
-            <li>P-BOX: 1256</li>
+            <li>E-Mail: tsedeymkt@gmail.com</li>
+            <li>Phone number: +251913993381</li>
             <li>Address: Addis Ababa, Ethiopia</li>
-            <li>FAX: 2894</li>
           </ul>
         </div>
         <div className='footer-two'>
@@ -48,23 +46,14 @@ const Footer = () => {
             </Link>
           </ul>
         </div>
-        <div className='footer-two'>
-          <h4>Customer Support</h4>
-          <ul>
-            <li>+251912131415</li>
-            <li>+251998979695</li>
-            <li>Customersupport@gmail.com</li>
-            <li>Telegram: @customersupport</li>
-          </ul>
-        </div>
+        
         <div className='social-medias'>
           <h4>Follow us on Social medias</h4>
-          <img src={Facebook} alt='' className="social-size"/>
-          <img src={Instagram} alt='' className="social-size"/>
-          <img src={Youtube} alt='' className="social-size"/>
-          <img src={Telegram} alt='' className="social-size"/>
-          <img src={Twitter} alt='' className="social-size"/>
-
+          <a href='https://facebook.com'><img src={Facebook} alt='' className="social-size"/></a>
+          <a href='https://instagram.com'><img src={Instagram} alt='' className="social-size"/></a>
+          <a href='https://youtube.com'><img src={Youtube} alt='' className="social-size"/></a>
+          <a href='https://telegram.com'><img src={Telegram} alt='' className="social-size"/></a>
+          <a href='https://twitter.com'><img src={Twitter} alt='' className="social-size"/></a>          
         </div>
       </div>
     </div>
