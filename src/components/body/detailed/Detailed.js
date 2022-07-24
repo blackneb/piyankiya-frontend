@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom'
 import axios from "axios";
 
 const Detailed = () => {
-  const baseURL="http://localhost/piyankiya/api/post/createbooking.php"
+  const baseURL="http://blackneb.com/piyankiya/api/post/createbooking.php"
   const [post, setPost] = React.useState(null);
   const location = useLocation();
   const { fname } = location.state
@@ -14,6 +14,10 @@ const Detailed = () => {
   const { fdescription } = location.state
   const { fprice } = location.state
   const { fid } = location.state
+  const { fage } =location.state
+  const { fgender } =location.state
+  const { ftypes } = location.state
+  
   const [values, setValues] = useState({
     name: "",
     phone: "",
@@ -89,7 +93,7 @@ const Detailed = () => {
     <div>
         <div className='detailedmain'>
           <div className='detailedfirst'>
-            <img src={Photo} alt='' className='detailedpic'/>
+            <img src={fphoto} alt='' className='detailedpic'/>
           </div>
           <div className='detailedsecond'>
           <h2 className='conlabel'>Detailed View</h2>
