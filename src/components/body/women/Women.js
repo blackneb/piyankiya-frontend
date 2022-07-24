@@ -5,7 +5,7 @@ import '../../styles/style.css'
 import axios from "axios";
 
 const Women = () => {
-  const baseURL = "http://localhost/piyankiya/api/post/read_byg.php?gender=female";
+  const baseURL = "http://blackneb.com/piyankiya/api/post/read_byg.php?gender=female";
   const [post, setPost] = React.useState("");
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
@@ -20,9 +20,20 @@ const Women = () => {
       <h1>Women Habeshan Clothes</h1>
       <div className='homewo'>
         <div className='homewoboxes'>
-        {post.data.map((e) => (
-            <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photo}/>
-          ))}
+        {(()=>{
+                    if(post.message==="no posts found"){
+                        return(
+                            <h1>we will add contents soon</h1>
+                        )
+                    }
+                    else{
+                        return(
+                          post.data.map((e) => (
+                            <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
+                            ))
+                        )
+                    }
+                })()}
         </div>
       </div>
       <Break/>
