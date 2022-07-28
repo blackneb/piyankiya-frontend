@@ -154,7 +154,7 @@ const Detailed = () => {
                   Price:
                 </td>
                 <td>
-                  {fprice}
+                  {fprice} Birr
                 </td>
               </tr>
               <tr>
@@ -192,20 +192,20 @@ const Detailed = () => {
             </table>
           </div>
           <div className='detailedthird'>
-          <form onSubmit={handleSubmit}>
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
-          />
-        ))}
-        <div className='withloading'>
-            <img className={loading? 'loadingimage' : 'loadingimageclose'} src={Loading}/>
-            <input className='submail' type="submit" value="Book"></input>
-        </div>        
-      </form>
+              <form onSubmit={handleSubmit}>
+                {inputs.map((input) => (
+                  <FormInput
+                    key={input.id}
+                    {...input}
+                    value={values[input.name]}
+                    onChange={onChange}
+                  />
+                ))}
+                <div className='withloading'>
+                    <img className={loading? 'loadingimage' : 'loadingimageclose'} src={Loading}/>
+                    <input className='submail' type="submit" value="Book"></input>
+                </div>        
+            </form>
           </div>
           <Stack spacing={2} sx={{ width: '100%' }}>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
