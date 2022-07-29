@@ -11,7 +11,7 @@ const Navbar = () => {
       <nav className='navbar'>
           <h3 className='logo'>PIYANKIYA</h3>
           <ul className={isMobile? "nav-links-mobile" : "nav-li"} onClick={()=>setIsMobile(false)}>
-            
+            <div className='mobilediv'>
                 <Link  to="/" className='links'>
                   <li>Home</li>
                 </Link>
@@ -33,6 +33,7 @@ const Navbar = () => {
                 <Link  to="/about" className='links'>
                   <li>About</li>
                 </Link>
+            </div>
 
           </ul>
           <button className='mobile-menu-icon' onClick={() => setIsMobile(!isMobile)}>
