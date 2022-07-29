@@ -65,6 +65,12 @@
         padding: 20px;
         border-radius: 25px;
     }
+    .detailedpic{
+        max-height: 350px;
+        max-width: 350px;
+        padding: 20px;
+        border-radius: 25px;
+    }
     .container{
         height: 470px;
         border: 0px solid black;
@@ -369,6 +375,12 @@ input{
 .loadingimageclose{
     display: none;
 }
+.loadpagetrue{
+    height: 100px;
+}
+.loadpagefalse{
+    display: none;
+}
 
 
 label{
@@ -487,7 +499,7 @@ input:invalid[focused="true"] ~ span{
     flex-wrap: wrap;
 }
 .detailedthird{
-    margin: 50px;
+    
     display: flex;
     align-items: center;
     padding: 20px;
