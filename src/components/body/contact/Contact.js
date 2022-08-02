@@ -100,6 +100,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleloading();
     axios.post(baseURL,{
       name:values.name,
       phone:values.phone,
@@ -143,7 +144,10 @@ const Contact = () => {
             onChange={onChange}
           />
         ))}
-        <input className='submail' type="submit" value="Send"></input>
+                <div className='withloading'>
+                    <img className={loading? 'loadingimage' : 'loadingimageclose'} src={Loading}/>
+                    <input className='submail' type="submit" value="send"></input>
+                </div>  
       </form>
               </div>
       </div>
