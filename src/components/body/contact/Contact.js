@@ -1,8 +1,21 @@
 import React, {useState} from 'react'
 import '../../styles/style.css'
 import FormInput from '../../Forms/FormInput'
+import axios from "axios";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import Loading from '../../icons/loading.gif';
+
 
 const Contact = () => {
+  const baseURL="http://blackneb.com/piyankiya/api/post/contact_mail.php"
+  const [post, setPost] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+  const [loading, setloading] = useState(false);
+  const [ud,setud] = useState("");
+  const [serv,setserv] = useState("");
   const [values, setValues] = useState({
     name: "",
     phone: "",
@@ -61,9 +74,52 @@ const Contact = () => {
     },
   ];
 
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+  const handleloading = (e) => {
+    setloading(true);
+  }
+  const handleloadingclose = (e) => {
+    setloading(false);
+  }
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(JSON.stringify(values, null,2))
+    axios.post(baseURL,{
+      name:values.name,
+      phone:values.phone,
+      email:values.email,
+      subject:values.subject,
+      message:values.message
+    }).then((response) => {
+      setPost(response.message);
+      if(response.data.message === "success"){
+        setud("Message Sent");
+        setserv("success");
+        handleClick();
+      }
+      else{
+        setud("Message not sent, please try again later!");
+        setserv("error");
+        handleClick();
+      }
+      handleloadingclose();
+    });
   };
 
   const onChange = (e) => {
@@ -91,6 +147,13 @@ const Contact = () => {
       </form>
               </div>
       </div>
+      <Stack spacing={2} sx={{ width: '100%' }}>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+              <Alert onClose={handleClose} severity={serv} sx={{ width: '100%' }}>
+                    {ud}
+              </Alert>
+            </Snackbar>
+          </Stack>
     </div>
   )
 }
