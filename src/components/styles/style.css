@@ -9,6 +9,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: sticky;
+    top: 0;
     height: 75px;
     background-color: white;
     border: 1px white solid;
@@ -16,7 +18,7 @@
 }
 .mobilediv{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 15px;
 }
 
@@ -69,6 +71,11 @@
         max-width: 350px;
         padding: 20px;
         border-radius: 25px;
+    }
+    .mobilediv{
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
     }
     .detailedpic{
         max-height: 350px;
