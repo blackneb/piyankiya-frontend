@@ -280,6 +280,21 @@
     animation: leng 2s ease-out;
 }
 
+.contactname{
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 2px solid red;
+    margin-bottom: 25px;
+    
+}
+.contact_top{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .top-con{
     text-align: center;
@@ -442,8 +457,9 @@ input:invalid[focused="true"] ~ span{
     }
 }
 
-
-
+.about_top{
+    margin: 50px;
+}
 
 .aboutsplit{
     display: flex;
@@ -467,7 +483,7 @@ input:invalid[focused="true"] ~ span{
 
 .aboutname{
     width: 140px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid red;
     margin-left: auto;
     margin-right: auto;
 }

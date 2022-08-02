@@ -131,9 +131,9 @@ const Contact = () => {
 
 
   return (
-    <div>
+    <div className='contact_top'>
       <div className='main_contact'>
-        <h1>Contact us</h1>
+        <h1 className='contactname'>Contact us</h1>
         <div className='contactmail'>
         <form onSubmit={handleSubmit}>
         {inputs.map((input) => (

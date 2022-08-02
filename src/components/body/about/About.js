@@ -5,7 +5,7 @@ import Mapaddress from '../../map/Mapaddress'
 
 const About = () => {
   return (
-    <div>
+    <div className='about_top'>
       <div>
         <h1 className='aboutname'>About us</h1>
         <div className='aboutsplit'>
