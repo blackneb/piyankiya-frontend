@@ -54,7 +54,7 @@ const Home = () => {
                     else{
                         return(
                           [...women.data].reverse().slice(0,3).map((e) => (
-                            <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
+                            <ClotheBox key={e.id} name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
                             ))
                         )
                     }
@@ -73,7 +73,7 @@ const Home = () => {
                     else{
                         return(
                           [...men.data].reverse().slice(0,3).map((e) => (
-                            <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
+                            <ClotheBox key={e.id} name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
                             ))
                         )
                     }
@@ -98,7 +98,7 @@ const Home = () => {
                     else{
                         return(
                           [...occasion.data].reverse().slice(0,3).map((e) => (
-                            <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
+                            <ClotheBox key={e.id} name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
                             ))
                         )
                     }
@@ -117,7 +117,7 @@ const Home = () => {
                     else{
                         return(
                           [...kids.data].reverse().slice(0,3).map((e) => (
-                            <ClotheBox name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
+                            <ClotheBox key={e.id} name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
                             ))
                         )
                     }

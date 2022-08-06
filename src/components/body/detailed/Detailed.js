@@ -141,54 +141,72 @@ const Detailed = () => {
           <div className='detailedsecond'>
           <h2 className='conlabel'>Detailed View</h2>
             <table className='detailedtable'>
-              <tr>
-                <td>
-                  Name:
-                </td>
-                <td>
-                  {fname}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Price:
-                </td>
-                <td>
-                  {fprice} Birr
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Gender:  
-                </td>
-                <td>
-                  For {fgender}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Age: 
-                </td>
-                <td>
-                  For {fage}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Type:
-                </td>
-                <td>
-                  {ftypes}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Description: 
-                </td>
-                <td>
-                  {fdescription}
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>
+                    Name:
+                  </td>
+                  <td>
+                    {fname}
+                  </td>
+                </tr>
+              </tbody>
+
+              <tbody>
+                <tr>
+                  <td>
+                    Price:
+                  </td>
+                  <td>
+                    {fprice} Birr
+                  </td>
+                </tr>
+              </tbody>
+
+              <tbody>
+                <tr>
+                  <td>
+                    Gender:  
+                  </td>
+                  <td>
+                    For {fgender}
+                  </td>
+                </tr>
+              </tbody>
+
+              <tbody>
+                <tr>
+                  <td>
+                    Age: 
+                  </td>
+                  <td>
+                    For {fage}
+                  </td>
+                </tr>
+              </tbody>
+
+              <tbody>
+                <tr>
+                  <td>
+                    Type:
+                  </td>
+                  <td>
+                    {ftypes}
+                  </td>
+                </tr>
+              </tbody>
+
+              <tbody>
+                <tr>
+                  <td>
+                    Description: 
+                  </td>
+                  <td>
+                    {fdescription}
+                  </td>
+                </tr>
+              </tbody> 
+              
             </table>
           </div>
           <div className='detailedthird'>
