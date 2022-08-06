@@ -216,7 +216,7 @@
 }
 
 .container:hover .pic{
-    transform: translate(0px, -15px)
+    transform: translate(0px, -15px);
 }
 
 .container:hover .details{
