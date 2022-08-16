@@ -9,6 +9,7 @@ import Women from "../icons/woman.png";
 import Contact from "../icons/contact.png";
 import Kids from "../icons/kids.png";
 import About from "../icons/about.png";
+import Occasion from "../icons/group.png";
 
 const Navbar = () => {
 
@@ -44,7 +45,7 @@ const Navbar = () => {
                 </Link>
                 <Link  to="/occasion" className='links'>
                   <div className='naviconsmain'>
-                    <img src={Home} alt="" className='social-size' />
+                    <img src={Occasion} alt="" className='social-size' />
                     <li className='naviconlabel'>Occasion</li>
                   </div>        
                 </Link>
