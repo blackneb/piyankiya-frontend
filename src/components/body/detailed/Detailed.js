@@ -96,6 +96,11 @@ const Detailed = () => {
     },
   ];
 
+  const refreshpage = (e) =>{
+    window.location.reload(false);
+  }
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleloading();
@@ -110,6 +115,7 @@ const Detailed = () => {
         setud("Item Booked");
         setserv("success");
         handleClick();
+        refreshpage();
       }
       else{
         setud("Item not booked Try again");
