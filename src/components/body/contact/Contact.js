@@ -96,6 +96,10 @@ const Contact = () => {
   const handleloadingclose = (e) => {
     setloading(false);
   }
+
+  const refreshpage = (e) =>{
+    window.location.reload(false);
+  }
   
 
   const handleSubmit = (e) => {
@@ -113,6 +117,7 @@ const Contact = () => {
         setud("Message Sent");
         setserv("success");
         handleClick();
+        refreshpage();
       }
       else{
         setud("Message not sent, please try again later!");
