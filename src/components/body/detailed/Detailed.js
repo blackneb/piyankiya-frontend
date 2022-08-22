@@ -101,6 +101,8 @@ const Detailed = () => {
   }
 
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleloading();
