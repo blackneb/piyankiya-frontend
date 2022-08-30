@@ -1,31 +1,21 @@
-import React, {useState} from 'react'
-import Photo from '../../Images/imageone.jpg'
+import React, {useState, useEffect} from 'react'
 import '../../styles/style.css'
 import FormInput from '../../Forms/FormInput'
 import { useLocation } from 'react-router-dom'
 import axios from "axios";
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Loading from '../../icons/loading.gif';
+import { ActionTypes } from '../../../redux/Constants/ActionTypes'
 
-const Detailed = () => {
+const RenderDetailed = (props) => {
   const baseURL="http://blackneb.com/piyankiya/api/post/createbooking.php"
   const [post, setPost] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const [loading, setloading] = useState(false);
-  const location = useLocation();
   const [ud,setud] = useState("");
   const [serv,setserv] = useState("");
-  const { fname } = location.state
-  const { fphoto } = location.state
-  const { fdescription } = location.state
-  const { fprice } = location.state
-  const { fid } = location.state
-  const { fage } =location.state
-  const { fgender } =location.state
-  const { ftypes } = location.state
 
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -54,7 +44,7 @@ const Detailed = () => {
     phone: "",
     email: "",
     quantity: "",
-    id:fid,
+    id:props.properties.id,
   });
   const inputs = [
     {
@@ -136,15 +126,11 @@ const Detailed = () => {
       
     
   }
-
-
-
-
-  return (
+  return(
     <div>
         <div className='detailedmain'>
           <div className='detailedfirst'>
-            <img src={fphoto} alt='' className='detailedpic'/>
+            <img src={ ActionTypes.PHOTOURL + props.properties.photos } alt='' className='detailedpic'/>
           </div>
           <div className='detailedsecond'>
           <h2 className='conlabel'>Detailed View</h2>
@@ -155,7 +141,7 @@ const Detailed = () => {
                     Name:
                   </td>
                   <td>
-                    {fname}
+                    {props.properties.name}
                   </td>
                 </tr>
               </tbody>
@@ -166,7 +152,7 @@ const Detailed = () => {
                     Price:
                   </td>
                   <td>
-                    {fprice} Birr
+                    {props.properties.price} Birr
                   </td>
                 </tr>
               </tbody>
@@ -177,7 +163,7 @@ const Detailed = () => {
                     Gender:  
                   </td>
                   <td>
-                    For {fgender}
+                    For {props.properties.gfor}
                   </td>
                 </tr>
               </tbody>
@@ -188,7 +174,7 @@ const Detailed = () => {
                     Age: 
                   </td>
                   <td>
-                    For {fage}
+                    For {props.properties.afor}
                   </td>
                 </tr>
               </tbody>
@@ -199,7 +185,7 @@ const Detailed = () => {
                     Type:
                   </td>
                   <td>
-                    {ftypes}
+                    {props.properties.types}
                   </td>
                 </tr>
               </tbody>
@@ -210,7 +196,7 @@ const Detailed = () => {
                     Description: 
                   </td>
                   <td>
-                    {fdescription}
+                    {props.properties.description}
                   </td>
                 </tr>
               </tbody> 
@@ -242,6 +228,24 @@ const Detailed = () => {
           </Stack>
 
         </div>
+    </div>
+  )
+}
+
+const Detailed = () => {
+  const [singleclothe, setsingleclothe] = useState(null);
+  const location = useLocation();
+  const loc = location.pathname
+  const path=loc.split("/")[2];
+  useEffect(() => {
+    axios.get(ActionTypes.BASEURL + `/read_single.php?id=${path}`).then((response) => {
+      setsingleclothe(response.data);
+    })
+  }, []);
+  if (!singleclothe) return null;
+  return (
+    <div>
+      <RenderDetailed properties={singleclothe}/>
     </div>
   )
 }

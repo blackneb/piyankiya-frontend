@@ -24,7 +24,7 @@ function App() {
         <Route path='/occasion' element={<Occasion/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        <Route path='/detailed' element={<Detailed/>}/>
+        <Route path='/detailed/:clotheID' element={<Detailed/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
