@@ -72,6 +72,10 @@
     border-radius: 15px;
 }
 
+.loadingpage{
+    width: 50px;
+}
+
 @media screen and (max-width:780px) {
     .pic{
         height: 400px;
