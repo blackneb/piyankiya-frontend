@@ -1,19 +1,27 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Break from '../break/Break'
+import axios from "axios";
 import ClotheBox from '../../cards/ClotheBox'
 import '../../styles/style.css'
-import axios from "axios";
+import {useSelector,useDispatch} from 'react-redux';
+import { ActionTypes } from '../../../redux/Constants/ActionTypes';
+import { set_clothes } from '../../../redux/Actions/Actions';
+import loadingpage from '../../icons/loadingpage.gif';
+
+
 
 const Kids = () => {
-  const baseURL = "http://blackneb.com/piyankiya/api/post/read_bya.php?age=kids";
-  const [post, setPost] = React.useState("");
-  React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setPost(response.data);
-    });
-  }, []);
+  const dispatch = useDispatch();
+  const [loading, setloading] = useState(false);
+  const clothes = useSelector(state => state.clothes.clothes);
+  const kidsclothe = clothes.filter((clothe) => clothe.afor === 'kids');
+  if(clothes.length === 0 ){
+    axios.get(ActionTypes.BASEURL + "/read.php").then((response) => {
+      dispatch(set_clothes(response.data.data));
+      setloading(true);
+    })
+  }
 
-  if (!post) return null;
   return (
     <div>
       <Break/>
@@ -21,15 +29,20 @@ const Kids = () => {
       <div className='homewo'>
         <div className='homewoboxes'>
         {(()=>{
-                    if(post.message==="no posts found"){
+                    if(clothes.length===0){
                         return(
-                            <h1>we will add contents soon</h1>
-                        )
+                          <h1><img className='loadingpage' src={loadingpage}  alt="loadingpage"/></h1>
+                          )
+                    }
+                    else if(kidsclothe.length===0){
+                      return(
+                        <h1>we will add contents soon</h1>
+                      )
                     }
                     else{
                         return(
-                          [...post.data].reverse().map((e) => (
-                            <ClotheBox key={e.id} name={e.name} id={e.id} price={e.price} description={e.description} photo={e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
+                          [...kidsclothe].reverse().map((e) => (
+                            <ClotheBox key={e.id} name={e.name} id={e.id} price={e.price} description={e.description} photo={ActionTypes.PHOTOURL + e.photos} age={e.afor} gender={e.gfor} types={e.types}/>          
                             ))
                         )
                     }
