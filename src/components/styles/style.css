@@ -227,12 +227,17 @@
 }
 
 .container:hover .pic{
-    transform: translate(0px, -15px);
+    animation: bounce 1s;
 }
 
 .container:hover .details{
     visibility: visible;
 }
+
+@keyframes bounce { 30%{
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+}}
 
 
 
