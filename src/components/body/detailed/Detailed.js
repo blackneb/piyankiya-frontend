@@ -234,18 +234,35 @@ const RenderDetailed = (props) => {
 
 const Detailed = () => {
   const [singleclothe, setsingleclothe] = useState(null);
+  const [isclothe, setisclothe] = useState(true);
   const location = useLocation();
   const loc = location.pathname
   const path=loc.split("/")[2];
   useEffect(() => {
     axios.get(ActionTypes.BASEURL + `/read_single.php?id=${path}`).then((response) => {
       setsingleclothe(response.data);
+      if(response.data.message === "no posts found"){
+        setisclothe(false);
+      }
     })
   }, []);
   if (!singleclothe) return null;
   return (
     <div>
-      <RenderDetailed properties={singleclothe}/>
+      {(() =>{
+        if(isclothe === true){
+          return(
+            <div>
+              <RenderDetailed properties={singleclothe}/>
+            </div>
+          )
+        }
+        else{
+          return(
+            <h1>There is no item with id {path}</h1>
+          )
+        }
+      })()}
     </div>
   )
 }
