@@ -14,7 +14,7 @@ import Detailed from './components/body/detailed/Detailed';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -27,7 +27,7 @@ function App() {
         <Route path='/detailed/:clotheID' element={<Detailed/>}/>
       </Routes>
       <Footer/>
-    </BrowserRouter>
+    </HashRouter>
     </div>
   );
 }
