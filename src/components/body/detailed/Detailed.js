@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react'
+import PhoneInput from 'react-phone-number-input'
+import flags from 'react-phone-number-input/flags'
 import '../../styles/style.css'
+import 'react-phone-number-input/style.css'
 import FormInput from '../../Forms/FormInput'
 import { useLocation } from 'react-router-dom'
 import axios from "axios";
@@ -14,6 +17,7 @@ const RenderDetailed = (props) => {
   const [post, setPost] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const [loading, setloading] = useState(false);
+  const [value, setValue] = useState()
   const [ud,setud] = useState("");
   const [serv,setserv] = useState("");
 
@@ -213,6 +217,11 @@ const RenderDetailed = (props) => {
                     onChange={onChange}
                   />
                 ))}
+                {/* <PhoneInput 
+                            className='phoneinput'
+                            placeholder="Enter phone number"
+                            value={value}
+                            onChange={setValue}/> */}
                 <div className='withloading'>
                     <img className={loading? 'loadingimage' : 'loadingimageclose'} src={Loading}/>
                     <input className='submail' type="submit" value="Book"></input>

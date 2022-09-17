@@ -592,3 +592,8 @@ li{
     width: 20px;
     margin: 15px;
 }
+
+.phoneinput{
+    width: 265px;
+    padding-left: 15px;
+}
