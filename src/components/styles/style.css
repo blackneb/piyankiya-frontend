@@ -15,6 +15,7 @@
     background-color: white;
     border: 1px white solid;
     box-shadow: 0 2px 4px 0 black, 0 2px 10px 0 black;
+    z-index: 100;
 }
 .mobilediv{
     display: flex;
@@ -179,7 +180,12 @@
     height: 400px;
     padding: 20px;
     border-radius: 25px;
+    z-index: -1;
 }
+.pic:hover{
+    z-index: -1;
+}
+
 
 .details{
     visibility: hidden;
@@ -237,6 +243,7 @@
 @keyframes bounce { 30%{
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
+    z-index: -1;
 }}
 
 
