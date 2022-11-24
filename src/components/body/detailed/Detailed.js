@@ -13,7 +13,7 @@ import Loading from '../../icons/loading.gif';
 import { ActionTypes } from '../../../redux/Constants/ActionTypes'
 
 const RenderDetailed = (props) => {
-  const baseURL="http://blackneb.com/piyankiya/api/post/createbooking.php"
+  const baseURL= ActionTypes.BASEURL + "/createbooking.php"
   const [post, setPost] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const [loading, setloading] = useState(false);
