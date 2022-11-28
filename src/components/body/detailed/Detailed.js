@@ -5,6 +5,7 @@ import '../../styles/style.css'
 import 'react-phone-number-input/style.css'
 import FormInput from '../../Forms/FormInput'
 import { useLocation } from 'react-router-dom'
+import Loadingpage from '../../cards/Loadingpage'
 import axios from "axios";
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
@@ -56,7 +57,6 @@ const RenderDetailed = (props) => {
       name: "name",
       type: "text",
       placeholder: "Name",
-      errorMessage: "name should be 3-16 characters and shouldn't include any special character!",
       label: "Name",
       pattern: "^[A-Za-z0-9 ]{3,16}$",
       required: true,
@@ -243,6 +243,7 @@ const RenderDetailed = (props) => {
 
 const Detailed = () => {
   const [singleclothe, setsingleclothe] = useState(null);
+  const [loading, setloading] = useState(false);
   const [isclothe, setisclothe] = useState(true);
   const location = useLocation();
   const loc = location.pathname
@@ -253,6 +254,10 @@ const Detailed = () => {
       if(response.data.message === "no posts found"){
         setisclothe(false);
       }
+      else{
+        setisclothe(true);
+        setloading(false);
+      }
     })
   }, []);
   if (!singleclothe) return null;
@@ -262,7 +267,7 @@ const Detailed = () => {
         if(isclothe === true){
           return(
             <div>
-              <RenderDetailed properties={singleclothe}/>
+              {loading? <Loadingpage/> : <RenderDetailed properties={singleclothe}/>}
             </div>
           )
         }
