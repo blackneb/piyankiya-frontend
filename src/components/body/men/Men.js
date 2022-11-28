@@ -7,6 +7,7 @@ import { ActionTypes } from '../../../redux/Constants/ActionTypes';
 import { set_clothes } from '../../../redux/Actions/Actions';
 import {useSelector, useDispatch} from 'react-redux';
 import loadingpage from '../../icons/loadingpage.gif';
+import Loadingpage from '../../cards/Loadingpage';
 
 const Men = () => {
   const [loading, setloading] = useState(false);
@@ -29,7 +30,7 @@ const Men = () => {
         {(()=>{
                     if(clothes.length===0){
                         return(
-                            <h1><img className='loadingpage' src={loadingpage}  alt="loadingpage"/></h1>
+                            <Loadingpage/>
                         )
                     }
                     else if(menclothe.length===0){

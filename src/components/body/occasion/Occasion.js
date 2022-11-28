@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { ActionTypes } from '../../../redux/Constants/ActionTypes';
 import { set_clothes } from '../../../redux/Actions/Actions';
 import loadingpage from '../../icons/loadingpage.gif';
+import Loadingpage from '../../cards/Loadingpage';
 
 
 
@@ -30,8 +31,8 @@ const Occasion = () => {
       {(()=>{
                     if(clothes.length ===0){
                         return(
-                          <h1><img className='loadingpage' src={loadingpage}  alt="loadingpage"/></h1>
-                        )
+                          <Loadingpage/>
+                          )
                     }
                     else if(occasionclothe.length===0){
                       return(

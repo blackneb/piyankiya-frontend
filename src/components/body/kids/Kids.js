@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Break from '../break/Break'
 import axios from "axios";
 import ClotheBox from '../../cards/ClotheBox'
@@ -7,6 +7,7 @@ import {useSelector,useDispatch} from 'react-redux';
 import { ActionTypes } from '../../../redux/Constants/ActionTypes';
 import { set_clothes } from '../../../redux/Actions/Actions';
 import loadingpage from '../../icons/loadingpage.gif';
+import Loadingpage from '../../cards/Loadingpage';
 
 
 
@@ -15,12 +16,19 @@ const Kids = () => {
   const [loading, setloading] = useState(false);
   const clothes = useSelector(state => state.clothes.clothes);
   const kidsclothe = clothes.filter((clothe) => clothe.afor === 'kids');
-  if(clothes.length === 0 ){
-    axios.get(ActionTypes.BASEURL + "/read.php").then((response) => {
-      dispatch(set_clothes(response.data.data));
+
+  useEffect(() => {
+    if(clothes.length === 0 ){
+      axios.get(ActionTypes.BASEURL + "/read.php").then((response) => {
+        dispatch(set_clothes(response.data.data));
+        setloading(true);
+      })
+    }
+    else{
       setloading(true);
-    })
-  }
+    }
+  }, [])
+  
 
   return (
     <div>
@@ -31,7 +39,7 @@ const Kids = () => {
         {(()=>{
                     if(clothes.length===0){
                         return(
-                          <h1><img className='loadingpage' src={loadingpage}  alt="loadingpage"/></h1>
+                          <Loadingpage/>
                           )
                     }
                     else if(kidsclothe.length===0){
