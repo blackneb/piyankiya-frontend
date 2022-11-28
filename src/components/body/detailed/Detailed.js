@@ -256,7 +256,7 @@ const Detailed = () => {
       }
       else{
         setisclothe(true);
-        setloading(false);
+        setloading();
       }
     })
   }, []);
@@ -264,6 +264,13 @@ const Detailed = () => {
   return (
     <div>
       {(() =>{
+        if(singleclothe.length === 0){
+          return(
+            <div>
+              <Loadingpage/>
+            </div>
+          )
+        }
         if(isclothe === true){
           return(
             <div>
