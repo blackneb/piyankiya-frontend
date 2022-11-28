@@ -1,11 +1,12 @@
 import React from 'react'
+import '../styles/style.css'
 import loadinggif from '../icons/loadingpages.gif'
 
 const Loadingpage = () => {
   return (
-    <div>
+    <div className='loadinggif'>
       <div>
-        <img src={loadinggif}/>
+        <img  src={loadinggif}/>
       </div>
     </div>
   )
