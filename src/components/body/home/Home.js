@@ -119,13 +119,18 @@ const RenderClothes = () =>{
 const Home = () => {
   const [loading, setloading] = useState(false);
   const dispatch = useDispatch();
+  const allitems = useSelector((state) => state.clothes.clothes);
 
   React.useEffect(() => {
-    axios.get(ActionTypes.BASEURL + "/read.php").then((response) => {
-      dispatch(set_clothes(response.data.data));
-      console.log(response.data.data);
+    if (allitems.length === 0){
+      axios.get(ActionTypes.BASEURL + "/read.php").then((response) => {
+        dispatch(set_clothes(response.data.data));
+        console.log(response.data.data);
+      })
+    }
+    else{
       setloading(true);
-    })
+    }
   }, [dispatch]);
 
   return (
