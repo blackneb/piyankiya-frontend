@@ -25,6 +25,7 @@
 .naviconsmain{
     display: flex;
     flex-direction: row;
+    margin: 15px;
 }
 .naviconlabel{
     margin-top: 15px;
@@ -45,9 +46,6 @@
 .links{
     text-decoration: none;
     color: black;
-    font-size: 15px;
-    padding: 5px 10px;
-    margin: 0 5px;
     cursor: pointer;
 }
 .links:hover{
@@ -78,6 +76,11 @@
 }
 
 @media screen and (max-width:780px) {
+    .naviconsmain{
+        display: flex;
+        margin: -10px;
+        flex-direction: row;
+    }
     .pic{
         height: 400px;
         max-width: 350px;
@@ -119,11 +122,11 @@
         left: 0;
         top: 75px;
         transition: all 0.5s ease-out;
-        width: 60%;
+        width: 80%;
         border: 1px rgb(119, 231, 109) solid;
         border-radius: 15px;
-        margin-left: 20% ;
-        margin-right: 20%;
+        margin-left: 10% ;
+        margin-right: 10%;
     }
     .links{
         color: black;
