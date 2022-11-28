@@ -126,6 +126,7 @@ const Home = () => {
       axios.get(ActionTypes.BASEURL + "/read.php").then((response) => {
         dispatch(set_clothes(response.data.data));
         console.log(response.data.data);
+        setloading(true);
       })
     }
     else{
