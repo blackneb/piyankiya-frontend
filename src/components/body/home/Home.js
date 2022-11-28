@@ -5,6 +5,7 @@ import ClotheBox from '../../cards/ClotheBox'
 import Break from '../break/Break'
 import Contact from '../contact/Contact'
 import About from '../about/About'
+import Loadingpage from '../../cards/Loadingpage';
 import { useDispatch, useSelector } from 'react-redux';
 import { ActionTypes } from '../../../redux/Constants/ActionTypes';
 import { set_clothes } from '../../../redux/Actions/Actions';
@@ -19,6 +20,7 @@ const RenderClothes = () =>{
   let occasionclothes = clothes.filter(clothe => clothe.types === 'occasion');
   return(
     <div>
+      <Break/>
       <div className='homewo'>
         <div className='homewoname'>
         <h1>For Women</h1>
@@ -136,8 +138,7 @@ const Home = () => {
 
   return (
 <div>
-      <Break/>
-      {loading ? <RenderClothes/> : "Loading..."}
+      {loading ? <RenderClothes/> : <Loadingpage/>}
     </div>
   )
 }
